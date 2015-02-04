@@ -1,0 +1,36 @@
+
+.btn-animated{
+    width: 100px;
+    height: 34px;
+    transition: width 2s ease, font-size 2s, height 2s, background-color 1s;
+}
+
+.btn-animated:hover{
+    width: 250px;
+    height: 80px;
+    font-size: 40px;
+    background-color: red;
+}
+
+.todo-anim{
+
+
+}
+
+.todo-anim.ng-enter {
+-webkit-animation-name: hinge;
+  animation-name: hinge;
+ -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.todo-anim.ng-leave {
+-webkit-animation-name: bounceOutUp;
+  animation-name: bounceOutUp;
+ -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
