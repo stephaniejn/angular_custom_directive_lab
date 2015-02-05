@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>To Do List</title>
+    <title>To Do List, Like Button and Weather</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.11/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.11/angular-animate.min.js"></script>
+    <script src="js/like-button.js"></script>
+    <script src="js/current-weather.js"></script>
     <script src="js/script.js"></script>
 </head>
 <body ng-app="TodoApp">
     <div class = "container">
         <div class = "row" ng-controller="TodoList">
             <div class = "col-sm-12">
-                <h3> To Do List </h3>
+                <h3> To Do List, Like Button and Weather </h3>
                 <input type = "text" ng-model="newItem">
                 <button class="btn btn-primary" ng-disabled="newItem.length < 1" ng-click="addItem()"> Add Item </button>
                 <button class = "btn btn-primary btn-animated" ng-click="getData()"> Get Data </button>
-                <div class="animated infinite" ng-class="myAnimation">
+              <!--   <div class="animated infinite" ng-class="myAnimation">
                     Animate This
-                </div>
-                <input type ="text" ng-model="myAnimation">
+                </div> -->
+              <!--   <input type ="text" ng-model="myAnimation"> -->
                 <table class = "table">
                     <tr>
                         <th></th>
@@ -34,8 +36,12 @@
                             <button class = "btn btn-danger" ng-click="removeItem($index)">X</button>
                             <button class="btn" ng-disabled = "$index == 0" ng-click="move($index,-1)">Up</button>
                             <button class="btn" ng-disabled = "$index == items.length-1" ng-click="move($index,1)">Down</button>
+                            <like-button starting-value="2"></like-button>
                         </td>
                     </tr>
+                    <br><br>
+                    <weather location=Vancouver></weather>
+                    <br>
             </div>
         </div>
     </div>
